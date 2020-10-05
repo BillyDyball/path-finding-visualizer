@@ -1,0 +1,36 @@
+#alert{
+    position: absolute;
+    display: none;
+    bottom: 10%;
+    right: 0;
+}
+
+#title, title:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.btn{
+    margin: 0 .75em;
+}
+
+.grid {
+    margin: 2em 0 0;
+    width: fit-content;
+    border: 10px solid #F64C72;
+    border-radius: 5px;
+    background-color: #b049ff;
+}
+
+.groupCenter{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+.groupTitle{
+    margin-bottom: .5em;
+    color: white;
+}
+
+.navbar-collapse{
+    flex-basis: 0!important;
+}

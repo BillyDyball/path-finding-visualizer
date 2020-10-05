@@ -1,0 +1,10 @@
+
+-make start/end node dragable
+
+-add more mazes
+
+-add weights?
+
+-optimize a*?
+
+DONE!
