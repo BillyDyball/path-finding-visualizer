@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Version
 
-http://billydyball.com/projects/SortingVisualizer/<br />
+http://billydyball.com/projects/PathFindingVisualizer/<br />
 Note: May be down if project is over a year old
 
 ## Available Scripts
