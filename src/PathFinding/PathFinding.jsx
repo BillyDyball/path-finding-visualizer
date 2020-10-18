@@ -429,81 +429,75 @@ export default class PathFinding extends React.Component {
                     <Navbar.Brand href="#home">Billy Dyball</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="navbar-collapse flex-lg-column">
+                        <Nav className="navbar-collapse d-flex flex-md-row">
 
-                            <div className="groupTitle row">Maze Selection</div>
-                            <div className="row">
-                                <Form>
-                                    <Form.Control 
-                                        as="select" 
-                                        id="mazeAlgorithmSelect" 
-                                        disabled={disableBtn}
-                                    >
-                                        <option>Pick a maze algorithm</option>
-                                        <option>Recursive Maze Division</option>
-                                        <option>Backtracking</option>
-                                        <option>Kruskal</option>
-                                    </Form.Control>
-                                </Form>
-                                <Button 
-                                    variant="outline-custom"
-                                    onClick={() => this.selectMazeAlgorithm("maze")} 
-                                    id="btnMazeSort" 
-                                    disabled={disableBtn}>Run Maze</Button>
-                            </div>
+                            <Form.Control 
+                                as="select" 
+                                id="mazeAlgorithmSelect" 
+                                disabled={disableBtn}
+                                onChange={() => this.selectMazeAlgorithm()}
+                                className="p-0 mr-2 my-1"
+                                style={{width: "unset"}}
+                            >
+                                <option value="" disabled selected>Maze Algorithms</option>
+                                <option>Recursive Maze Division</option>
+                                <option>Backtracking</option>
+                                <option>Kruskal</option>
+                            </Form.Control>
 
-                        </Nav>
-                        <Nav className="navbar-collapse flex-lg-column groupCenter">
+                            <Form.Control 
+                                as="select" 
+                                id="algorithmSelect" 
+                                disabled={disableBtn}
+                                className="p-0 my-1"
+                                style={{width: "unset"}}
+                            >
+                                <option value="" disabled selected>Search Algorithms</option>
+                                <option>A*</option>
+                                <option>Breadth-First-Search</option>
+                                <option>Best-First-Search</option>
+                                <option>Depth-First-Search</option>
+                                <option>Dijkstra</option>
+                            </Form.Control>
+                                    
+                            <Button variant="outline-custom"
+                                onClick={() => this.selectAlgorithm()} 
+                                id="btnSort"
+                                disabled={disableBtn}
+                                className="my-1">Search</Button>
 
-                            <div className="groupTitle row">Algorithm Sort</div>
-                            <div className="row">
-                                <Form>
-                                    <Form.Control 
-                                        as="select" 
-                                        id="algorithmSelect" 
-                                        disabled={disableBtn}
-                                    >
-                                        <option>Pick an algorithm</option>
-                                        <option>A*</option>
-                                        <option>Breadth-First-Search</option>
-                                        <option>Best-First-Search</option>
-                                        <option>Depth-First-Search</option>
-                                        <option>Dijkstra</option>
-                                    </Form.Control>
-                                </Form>
-                                <Button 
-                                    variant="outline-custom"
-                                    onClick={() => this.selectAlgorithm()} 
-                                    id="btnSort"
-                                    disabled={disableBtn}>Search</Button>
-                            </div>
-
-                        </Nav>
-                        <Nav className="navbar-collapse flex-lg-column">
-
-                            <div className="groupTitle row">Board Settings</div>
-                            <div>
-                                <Button 
-                                    variant="outline-custom"
-                                    onClick={() => this.clearGrid()} 
-                                    disabled={disableBtn}>Clear Board</Button>
-                                <Button 
-                                    variant="outline-custom"
-                                    onClick={() => this.clearVisitedNodes()} 
-                                    disabled={disableBtn}>clear Visited Nodes</Button>
-                            </div>
+                            <Button variant="outline-custom"
+                                onClick={() => this.clearGrid()} 
+                                disabled={disableBtn}
+                                className="my-1">Clear Board</Button>
+                                
+                            <Button variant="outline-custom"
+                                onClick={() => this.clearVisitedNodes()} 
+                                disabled={disableBtn}
+                                className="my-1">clear Visited Nodes</Button>
 
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
 
-                <div className="container">
-                    
+                <div className="col bg-danger">
+                    <div className="container">
+                        <div className="row">
+                            <div className="title mx-auto text-center">Key</div>
+                        </div>
+                        <div className="row">
+                            <div className="col-4">
+                                Node
+                            </div>
+                            <div className="col-4">
+                                Wall
+                            </div>
+                            <div className="col-4">
+                                Shortestpath
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <Alert variant={'primary'} id="alert">
-                    This is a primary alert—check it out!
-                </Alert>
 
                 <div className="grid mx-auto">
                     {grid.map((row, rowIdx) => {
