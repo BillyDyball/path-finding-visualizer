@@ -491,7 +491,7 @@ export default class PathFinding extends React.Component {
                             </div>
                             <div className="col-4">
                                 Wall
-                            </div>
+                            </div> 
                             <div className="col-4">
                                 Shortestpath
                             </div>
