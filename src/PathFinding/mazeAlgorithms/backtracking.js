@@ -28,7 +28,7 @@ export function backtrackingGenerator(grid, width, height, animations){
         //get list of potential neigbors
         let neigbors = findNeighbors(crow, ccol, grid);
 
-        if(neigbors === undefined || neigbors.length == 0){
+        if(neigbors === undefined || neigbors.length === 0){
             track.pop();
         } else {
             //new row, new col
