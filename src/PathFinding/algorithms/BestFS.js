@@ -1,4 +1,4 @@
-export function BestFS(grid, startNode, endNode){
+export function BestFS(grid, startNode, endNode) {
     startNode.distance = 0;
     const visitedNodesInOrder = [],
         stack = [startNode];
@@ -16,7 +16,7 @@ export function BestFS(grid, startNode, endNode){
         if (currentNode === endNode) break;
         
         const neigbors = getUnvisitedNeighbors(currentNode, grid);
-        for(let i = 0; i < neigbors.length; i++){
+        for (let i = 0; i < neigbors.length; i++) {
             neigbors[i].previousNode = currentNode;
             neigbors[i].isVisited = true;
             neigbors[i].distance = heuristic(neigbors[i], endNode);
@@ -42,11 +42,10 @@ function getUnvisitedNeighbors(node, grid) {
     return neighbors.filter(neighbor => !neighbor.isVisited && !neighbor.isWall);
   }
 
-//Im basing the heuristic of the distance from the node Im 
-//looking at to where its trying to go
-function heuristic(node, endNode){
+// Im basing the heuristic of the distance from the node Im 
+// looking at to where its trying to go
+function heuristic(node, endNode) {
     let dist = 0;
-
     dist += Math.abs(node.col - endNode.col);
     dist += Math.abs(node.row - endNode.row);
 

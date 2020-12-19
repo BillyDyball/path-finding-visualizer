@@ -6,23 +6,22 @@ export function BiBFS(grid, startNode, endNode) {
         endNodeStack = [endNode],
         visitedNodesInOrder = [];
 
-    while(stack[0] !== undefined){
+    while (stack[0] !== undefined) {
         const currentStartSideNode = stack.shift();
         const currentEndSideNode = stack.shift();
         
-        visitedNodesInOrder.push(currentStartSideNode); //for animations
+        visitedNodesInOrder.push(currentStartSideNode); // For animations
         visitedNodesInOrder.push(currentEndSideNode);
 
-        if(currentNode === endNode) break; 
+        if (currentNode === endNode) break; 
 
         const neigbors = getUnvisitedNeighbors(currentNode, grid);
-        for(let i = 0; i < neigbors.length; i++){
+        for (let i = 0; i < neigbors.length; i++) {
             neigbors[i].isVisited = true;
             neigbors[i].previousNode = currentNode;
             stack.push(neigbors[i]);
         }
     }
-
     return visitedNodesInOrder;
 }
 

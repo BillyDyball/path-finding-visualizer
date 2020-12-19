@@ -3,7 +3,6 @@ import React from 'react'
 export default class Legend extends React.Component {
     render() {
         return (
-            <>
             <div className="col bg-danger">
                 <div className="container">
                     <div className="row">
@@ -22,7 +21,6 @@ export default class Legend extends React.Component {
                     </div>
                 </div>
             </div>
-            </>
         );
     }
 }

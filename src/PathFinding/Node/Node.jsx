@@ -5,13 +5,13 @@ import { DragSource, DropTarget } from 'react-dnd'
 let dragable = false;
 
 const itemSource = {
-  beginDrag(props){
+  beginDrag(props) {
     console.log("dragging");
     console.log(props);
     return props;
   },
-  endDrag(props, monitor, Component){
-    if(!monitor.didDrop()){
+  endDrag(props, monitor, Component) {
+    if (!monitor.didDrop()) {
       //ADD FUNCTION
       return;
     }
@@ -20,7 +20,7 @@ const itemSource = {
   }
 }
 
-function dragCollect(connect, monitor){
+function dragCollect(connect, monitor) {
   return { 
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
@@ -64,8 +64,7 @@ class Node extends Component {
       const opacity = isDragging ? 0 : 1;
 
       return connectDragSource(
-        <div
-          id={`node-${row}-${col}`}
+        <div id={`node-${row}-${col}`}
           className={`node ${extraClassName}`}
           style={{ opacity }}
           onMouseDown={() => onMouseDown(row, col)}
@@ -81,8 +80,7 @@ class Node extends Component {
       const backgroundColor = hovered ? 'lightgreen' : 'white';
       
       return connectDropTarget(
-        <div
-          id={`node-${row}-${col}`}
+        <div id={`node-${row}-${col}`}
           className={`node ${extraClassName}`}
           style={{ backgroundColor }}
           onMouseDown={() => onMouseDown(row, col)}
@@ -119,8 +117,7 @@ export default class Node extends Component {
     : '';
 
     return (
-      <div
-        id={`node-${row}-${col}`}
+      <div id={`node-${row}-${col}`}
         className={`node ${extraClassName}`}
         onMouseDown={() => onMouseDown(row, col)}
         onMouseEnter={() => onMouseEnter(row, col)}
