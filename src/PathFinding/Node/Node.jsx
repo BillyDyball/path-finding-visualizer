@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Node.css';
+import './Node.scss';
 
 export default class Node extends Component {
     render() {
@@ -19,12 +19,11 @@ export default class Node extends Component {
             isWall ? 'node-wall' : '';
 
         return (
-            <div
-                id={`node-${row}-${col}`}
+            <button id={`node-${row}-${col}`}
                 className={`node ${extraClassName}`}
                 onMouseDown={() => onMouseDown(row, col)}
                 onMouseEnter={() => onMouseEnter(row, col)}
-                onMouseUp={() => onMouseUp()}></div>
+                onMouseUp={() => onMouseUp()}></button>
         );
 
     }
