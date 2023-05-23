@@ -1,16 +1,17 @@
-#alert{
+#alert {
     position: absolute;
     display: none;
     bottom: 10%;
     right: 0;
 }
 
-#title, title:hover{
+#title,
+title:hover {
     text-decoration: none;
     color: white;
 }
 
-.btn{
+.btn {
     margin: 0 .75em;
 }
 
@@ -19,14 +20,13 @@
     width: fit-content;
     border: 10px solid #F64C72;
     border-radius: 5px;
-    background-color: #b049ff;
 }
 
-.groupTitle{
+.groupTitle {
     margin-bottom: .5em;
     color: white;
 }
 
-.navbar-collapse{
-    flex-basis: 0!important;
+.navbar-collapse {
+    flex-basis: 0 !important;
 }
