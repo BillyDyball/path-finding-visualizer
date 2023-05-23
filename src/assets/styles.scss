@@ -2,8 +2,8 @@ $primary: rgb(0, 123, 255);
 $cyan: #56d7ec;
 
 $theme-colors: (
-    primary: $primary,
-    cyan: $cyan
+    'primary': $primary,
+    'cyan': $cyan
 );
 
 @import '~bootstrap/scss/bootstrap';
