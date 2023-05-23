@@ -1,8 +1,9 @@
-$primary: rgb(0 123 255);
+$primary: rgb(0, 123, 255);
+$cyan: #56d7ec;
 
 $theme-colors: (
-    --primary: $primary,
-    "danger": #ff4136
+    primary: $primary,
+    cyan: $cyan
 );
 
 @import '~bootstrap/scss/bootstrap';

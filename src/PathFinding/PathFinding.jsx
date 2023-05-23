@@ -1,6 +1,6 @@
 import React from 'react'
 import Node from './Node/Node'
-import './PathFinding.css'
+import './PathFinding.scss'
 import { Navbar, Nav, Button, Form } from 'react-bootstrap'
 import { dijkstra } from './algorithms/dijkstra'
 import { aStar } from './algorithms/aStar'
@@ -388,17 +388,15 @@ export default class PathFinding extends React.Component {
 
         return (
             <>
-                <Navbar collapseOnSelect expand="lg" bg="dark">
-                    {/* <Navbar.Brand href="#home">Billy Dyball</Navbar.Brand> */}
+                <Navbar collapseOnSelect expand="lg" bg="dark" varient="light">
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="navbar-collapse d-flex flex-md-row">
-                            <Form.Control
-                                as="select"
+                            <Form.Control as="select"
                                 id="mazeAlgorithmSelect"
                                 disabled={disableBtn}
                                 onChange={() => this.selectMazeAlgorithm()}
-                                className="p-0 mr-2 my-1"
+                                className="p-0 m-2"
                                 style={{ width: "unset" }}>
                                 <option value="" disabled selected>Maze Algorithms</option>
                                 <option>Recursive Maze Division</option>
@@ -406,11 +404,10 @@ export default class PathFinding extends React.Component {
                                 <option>Kruskal</option>
                             </Form.Control>
 
-                            <Form.Control
-                                as="select"
+                            <Form.Control as="select"
                                 id="algorithmSelect"
                                 disabled={disableBtn}
-                                className="p-0 mr-2"
+                                className="p-0 m-2"
                                 style={{ width: "unset" }}>
                                 <option value="" disabled selected>Search Algorithms</option>
                                 <option>A*</option>
@@ -424,17 +421,17 @@ export default class PathFinding extends React.Component {
                                 onClick={() => this.selectAlgorithm()}
                                 id="btnSort"
                                 disabled={disableBtn}
-                                className="ml-0 mr-2">Search</Button>
+                                className="m-2">Search</Button>
 
                             <Button variant="primary"
                                 onClick={() => this.clearGrid()}
                                 disabled={disableBtn}
-                                className="ml-0 mr-2">Clear Board</Button>
+                                className="m-2">Clear Board</Button>
 
                             <Button variant="primary"
                                 onClick={() => this.clearVisitedNodes()}
                                 disabled={disableBtn}
-                                className="ml-0 mr-2">clear Visited Nodes</Button>
+                                className="m-2">clear Visited Nodes</Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -442,8 +439,7 @@ export default class PathFinding extends React.Component {
                 <div className="grid mx-auto">
                     {grid.map((row, rowIdx) => {
                         return (
-                            <div
-                                key={rowIdx}
+                            <div key={rowIdx}
                                 style={{
                                     width: 25 * row.length,
                                     height: 25,
@@ -451,8 +447,7 @@ export default class PathFinding extends React.Component {
                                 {row.map((node, nodeIdx) => {
                                     const { row, col, isFinish, isStart, isWall } = node;
                                     return (
-                                        <Node
-                                            key={nodeIdx}
+                                        <Node key={nodeIdx}
                                             row={row}
                                             col={col}
                                             isFinish={isFinish}

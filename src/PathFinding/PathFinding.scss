@@ -8,7 +8,7 @@
 #title,
 title:hover {
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
 
 .btn {
@@ -18,13 +18,13 @@ title:hover {
 .grid {
     margin: 2em 0 0;
     width: fit-content;
-    border: 10px solid #F64C72;
+    border: 10px solid var(--primary);
     border-radius: 5px;
 }
 
 .groupTitle {
     margin-bottom: .5em;
-    color: white;
+    color: var(--white);
 }
 
 .navbar-collapse {

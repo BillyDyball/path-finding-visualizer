@@ -1,61 +1,57 @@
 .node {
     width: 25px;
     height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
     display: inline-block;
-    outline: 1px solid rgb(211, 211, 211);
+    border: 1px solid var(--light);
 }
 
 .node-finish {
-    background-color: #ff184a;
+    background-color: var(--danger);
 }
 
 .node-start {
-    background-color: rgb(0, 196, 0);
+    background-color: var(--success);
 }
 
 .node-visited {
     animation-name: visitedAnimation;
     animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 0;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-play-state: running;
+}
+
+.node-wall {
+    animation-name: wallAnimation;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+}
+
+.node-shortest-path {
+    animation-name: shortestPath;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes visitedAnimation {
     0% {
-        background-color: rgb(4, 0, 255);
+        background-color: var(--yellow);
     }
 
     100% {
-        background-color: rgb(66, 211, 221);
+        background-color: var(--cyan);
     }
-}
-
-.node-wall {
-    /* background-color: rgb(12, 53, 71); */
-    animation-name: wallAnimation;
-    animation-duration: .75s;
-    animation-timing-function: ease-out;
-    animation-delay: 0;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running
 }
 
 @keyframes wallAnimation {
     0% {
-        /* transform: scale(0.3);
-    background-color: rgb(0, 176, 255);
-    border-radius: 100%; */
-        background-color: #b96af5;
+        background-color: var(--yellow);
     }
 
     25% {
-        background-color: #ff9a9a;
+        background-color: var(--teal);
     }
 
     75% {
@@ -63,24 +59,13 @@
     }
 
     100% {
-        background-color: #f7d5a8;
+        background-color: var(--primary);
     }
-}
-
-.node-shortest-path {
-    animation-name: shortestPath;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 0;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
 }
 
 @keyframes shortestPath {
     0% {
-        background-color: rgb(0, 119, 255);
+        background-color: var(--yellow);
     }
 
     50% {
@@ -88,6 +73,6 @@
     }
 
     100% {
-        background-color: rgb(228, 228, 1);
+        background-color: var(--orange);
     }
 }
